@@ -4,7 +4,6 @@ import "./Product.css";
 
 function Product({ id, title, image, price, rating }) {
   const [{ cart }, dispatch] = useStateValue();
-  console.log("This is the cart >>>", cart);
   const addToCart = () => {
     // Dispatch the item into the dataLayer
     dispatch({
