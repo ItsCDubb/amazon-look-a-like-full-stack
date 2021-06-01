@@ -13,7 +13,9 @@
   z-index: 1;
 }
 .product:hover {
-  box-shadow: 0 10px 6px -6px rgb(48, 48, 48);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }
 .product > img {
   object-fit: contain;
