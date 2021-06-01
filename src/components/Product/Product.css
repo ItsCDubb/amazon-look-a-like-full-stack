@@ -12,6 +12,9 @@
   background-color: white;
   z-index: 1;
 }
+.product:hover {
+  box-shadow: 0 10px 6px -6px rgb(48, 48, 48);
+}
 .product > img {
   object-fit: contain;
   max-height: 200px;
@@ -33,5 +36,5 @@
   margin-top: 5px;
 }
 .product__rating {
-    display: flex;
+  display: flex;
 }

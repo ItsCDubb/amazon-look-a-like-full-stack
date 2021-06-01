@@ -5,7 +5,7 @@ import CartItem from "../../components/CartItem/CartItem";
 import "./Cart.css";
 
 function Cart() {
-  const [{ cart }] = useStateValue();
+  const [{ cart, user }] = useStateValue();
   return (
     <div className="cart">
       <div className="cart__left">
@@ -15,6 +15,7 @@ function Cart() {
           alt=""
         />
         <div>
+          <h3>Hello, {user?.email}</h3>
           <h2 className="cart__title">Your Cart</h2>
           {cart.map((item) => (
             <CartItem

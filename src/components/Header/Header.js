@@ -1,12 +1,18 @@
 import React from "react";
 import YoutubeSearchedForIcon from "@material-ui/icons/YoutubeSearchedFor";
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { useStateValue } from "../../StateProvider";
 import { Link } from "react-router-dom";
+import { auth } from "../../firebase";
 import "./Header.css";
 
 function Header() {
-  const [{ cart }] = useStateValue();
+  const [{ cart, user }] = useStateValue();
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
   return (
     <div className="header">
       <Link to="/">
@@ -22,11 +28,15 @@ function Header() {
         <YoutubeSearchedForIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        {/* Hello/Sign in */}
-        <div className="header__link">
-          <span className="header__linkLineOne">Hello Guest</span>
-          <span className="header__linkLineTwo">Sign In</span>
-        </div>
+        <Link to={!user && "/login"}>
+          {/* Hello/Sign in */}
+          <div className="header__link" onClick={handleAuthentication}>
+            <span className="header__linkLineOne">Hello Guest</span>
+            <span className="header__linkLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
+          </div>
+        </Link>
         {/* Returns & Orders */}
         <div className="header__link">
           <span className="header__linkLineOne">Returns</span>

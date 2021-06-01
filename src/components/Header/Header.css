@@ -35,12 +35,14 @@
   display: flex;
   justify-content: space-evenly;
 }
+.header__nav > a {
+  text-decoration: none;
+}
 .header__link {
   display: flex;
   flex-direction: column;
   color: white;
   margin: 0 10px;
-  text-decoration: none;
 }
 .header__linkLineOne {
   font-size: 10px;
