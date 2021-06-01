@@ -6,9 +6,9 @@ const firebaseConfig = {
   projectId: "full-stack-91e38",
   storageBucket: "full-stack-91e38.appspot.com",
   messagingSenderId: "986330947339",
-  appId: "1:986330947339:web:d6fc92755cce8d510c0c0e",
-  measurementId: "G-GWNSG3C4XK",
-};
+  appId: "1:986330947339:web:92ea686b62bde8f40c0c0e",
+  measurementId: "G-1PYXJFC2N2"
+}
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
