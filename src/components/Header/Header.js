@@ -1,6 +1,6 @@
 import React from "react";
-import YoutubeSearchedForIcon from "@material-ui/icons/YoutubeSearchedFor";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import YoutubeSearchedForIcon from "@material-ui/icons/YoutubeSearchedFor";
 import { useStateValue } from "../../StateProvider";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
@@ -13,6 +13,7 @@ function Header() {
       auth.signOut();
     }
   };
+
   return (
     <div className="header">
       <Link to="/">
@@ -31,21 +32,25 @@ function Header() {
         <Link to={!user && "/login"}>
           {/* Hello/Sign in */}
           <div className="header__link" onClick={handleAuthentication}>
-            <span className="header__linkLineOne">Hello Guest</span>
+            <span className="header__linkLineOne">
+              Hello {!user ? "Guest" : user.email}
+            </span>
             <span className="header__linkLineTwo">
               {user ? "Sign Out" : "Sign In"}
             </span>
           </div>
         </Link>
+        <Link to="/orders">
         {/* Returns & Orders */}
         <div className="header__link">
-          <span className="header__linkLineOne">Returns</span>
-          <span className="header__linkLineTwo">& Orders</span>
+          <span className="header__linkLineOne">Your</span>
+          <span className="header__linkLineTwo">Orders</span>
         </div>
-        {/* Your Prime */}
+        </Link>
+        {/* Your text */}
         <div className="header__link">
           <span className="header__linkLineOne">Your</span>
-          <span className="header__linkLineTwo">Prime</span>
+          <span className="header__linkLineTwo">Text Here</span>
         </div>
         <Link to="/cart">
           <div className="header__linkCart">

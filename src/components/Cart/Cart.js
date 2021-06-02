@@ -1,11 +1,12 @@
 import React from "react";
-import { useStateValue } from "../../StateProvider";
 import Subtotal from "../../components/Subtotal/Subtotal";
 import CartItem from "../../components/CartItem/CartItem";
+import { useStateValue } from "../../StateProvider";
 import "./Cart.css";
 
 function Cart() {
   const [{ cart, user }] = useStateValue();
+
   return (
     <div className="cart">
       <div className="cart__left">

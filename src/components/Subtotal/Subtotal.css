@@ -5,9 +5,9 @@
   width: 300px;
   height: 100px;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #a1a1a1;
   border-radius: 3px;
-  background-color: #f3f3f3;
+  background-color: #eaeded;
 }
 .subtotal > button {
   margin-top: 10px;
