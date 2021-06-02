@@ -11,6 +11,7 @@ function CartItem({ id, image, title, price, rating, hideButton }) {
       id: id,
     });
   };
+  
   return (
     <div className="cartItem">
       <img className="cartItem__image" src={image} alt="" />

@@ -7,6 +7,7 @@ function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const signIn = (event) => {
     //   Stops page from refreshing
     event.preventDefault();
@@ -18,6 +19,7 @@ function Login() {
       })
       .catch((error) => alert(error.message));
   };
+
   const register = (event) => {
     event.preventDefault();
     //   Some fancy firebase registration stuff
@@ -31,6 +33,7 @@ function Login() {
       })
       .catch((error) => alert(error.message));
   };
+  
   return (
     <div className="login">
       <Link to="/">
